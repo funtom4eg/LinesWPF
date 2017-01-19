@@ -12,17 +12,21 @@ namespace LinesConsole
     {
         public int Size { get; set; }
         public int Colors { get; set; }
+        public int EmptyCellsCount { get; set; }
 
         public Cell[,] cells;
 
         public Table(int size)
         {
+            //Empty cells count
+            EmptyCellsCount = size * size;
+
             //setting x,y size
             if (size > 5)
                 this.Size = size;
             else this.Size = 5;
 
-            cells = new EmptyCell[size, size];
+            cells = new Cell[size, size];
 
             //Initializing (0,0) cell
             cells[0, 0] = new EmptyCell();
@@ -85,13 +89,18 @@ namespace LinesConsole
 
     class EndPointCell : Cell
     {
-        ConsoleColor color;
+        public ConsoleColor color;
+
+        public EndPointCell(ConsoleColor color)
+        {
+            this.color = color;
+        }
 
     }
 
     class LineCell : Cell
     {
-        ConsoleColor color;
+        public ConsoleColor color;
         Directions direction;
 
     }
