@@ -19,7 +19,7 @@ namespace LinesConsole
             //Console.WriteLine(table.cells[1,1].Right.Equals(table.cells[3,1].Left));
 
             TableOperator oper = new TableOperator();
-            Table table = oper.CreateBlankTable(6);
+            Table table = oper.CreateBlankTable(3);
             oper.FillTable(table);
 
             Console.WriteLine();

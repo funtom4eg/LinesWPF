@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace LinesConsole.Classes
 {
     class TableOperator
     {
-        static Random rand = new Random();
+        Random rand = new Random();
 
         public TableOperator()
         {
@@ -43,6 +44,7 @@ namespace LinesConsole.Classes
             if (table.cells[startX, startY].Bottom != null)
                 table.cells[startX, startY].Bottom.Top = table.cells[startX, startY];
 
+            Thread.Sleep(5);
             bool same = true;
             int endX = 0, endY = 0;
             while (same)
